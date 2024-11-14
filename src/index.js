@@ -1,15 +1,3 @@
-import DOCS from './tips.html'
- 
-// return tips.html
-if (url.pathname === "/") {
-  return new Response(DOCS, {
-    status: 200,
-    headers: {
-      "content-type": "text/html"
-    }
-  });
-}
-
 addEventListener("fetch", (event) => {
   event.passThroughOnException();
   event.respondWith(handleRequest(event.request));
@@ -171,5 +159,17 @@ function responseUnauthorized(url) {
   return new Response(JSON.stringify({ message: "UNAUTHORIZED" }), {
     status: 401,
     headers: headers,
+  });
+}
+
+import DOCS from './tips.html'
+ 
+// return tips.html
+if (url.pathname === "/") {
+  return new Response(DOCS, {
+    status: 200,
+    headers: {
+      "content-type": "text/html"
+    }
   });
 }
