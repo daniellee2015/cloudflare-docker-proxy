@@ -172,4 +172,4 @@ if (url.pathname === "/") {
       "content-type": "text/html"
     }
   });
-}
+};
