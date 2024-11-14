@@ -162,14 +162,19 @@ function responseUnauthorized(url) {
   });
 }
 
-import DOCS from './tipss.html';
- 
-// return tips.html
+const fs = require('fs');
+const path = require('path');
+
+// 读取 tips.html 文件
+const tipsHTML = fs.readFileSync(path.join(__dirname, 'src', 'tips.html'), 'utf8');
+
+// 返回 HTML 内容
 if (url.pathname === "/") {
-  return new Response(DOCS, {
+  return new Response(tipsHTML, {
     status: 200,
     headers: {
       "content-type": "text/html"
     }
   });
 }
+
