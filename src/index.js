@@ -162,7 +162,7 @@ function responseUnauthorized(url) {
   });
 }
 
-import DOCS from './tips.html'
+import DOCS from './tipss.html'
  
 // return tips.html
 if (url.pathname === "/") {
